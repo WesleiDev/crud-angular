@@ -1,0 +1,32 @@
+<div>
+  <h3>Clientes</h3>
+  <button type="button" class="btn btn-danger" routerLink="incluir">Novo</button>
+  <button type="button" class="btn btn-primary" (click)="consultarTodos()">TODOS</button>
+  <div class="col-sm-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID#</th>
+          <th>Nome</th>
+          <th>Fone</th>
+          <th>Endereço</th>
+          <th>Opção</th>
+        </tr>  
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td> {{ cliente.id }} </td>
+          <td> {{ cliente.nomeclie }} </td>
+          <td> {{ cliente.fone }} </td>
+          <td> {{ cliente.endereco }} </td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewCliente(cliente.id)">Visualizar</button>
+            <button type="button" class="btn btn-primary" (click)="editarCliente(cliente.id)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="excluirCliente(cliente)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>
+</div>

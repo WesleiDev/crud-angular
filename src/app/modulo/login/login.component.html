@@ -1,0 +1,20 @@
+<h3>LOGIN</h3>
+
+<div class="form-group" >
+    <label for="usuario">E-mail</label>
+    <input type="text" id="usuario" class="form-control" [(ngModel)]="usuario.email"  />    
+</div>
+<div class="form-group" >
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" class="form-control" [(ngModel)]="usuario.password" />    
+</div>
+
+<button type="button" class="btn btn-primary" (click)="login()">Login</button>
+<button type="button" class="btn btn-primary" (click)="teste()">Teste</button>
+<button type="button" class="btn btn-primary" (click)="sair()">Sair</button>
+<button type="button" class="btn btn-primary" (click)="getToken()">GET TOKEN</button>
+
+<p>Token Response:  {{ tokenResponse | json }} </p>
+<p>Token: {{ token }}  </p>
+
+<p> {{ usuario | json }} </p>
